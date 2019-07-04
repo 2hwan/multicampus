@@ -50,7 +50,10 @@ mlist = list(mtuple)
 print(mlist)
 
 # 8. 다음 항목을 딕셔너리(dict)으로 선언해보세요. : <성인 - 100000 , 청소년 - 70000 , 아동 - 30000>
-mdict = {'성인' : '100000', '청소년' : '70000', '아동': '30000'}
+mdict = {}
+mdict['성인'] = 100000
+mdict['청소년'] = 70000
+mdict['아동'] = 30000
 print(mdict,type(mdict))
 
 # 9. 8번 에서 선언한 dict 항목에 <소아 - 0> 항목을 추가해보세요.
@@ -58,7 +61,56 @@ mdict['소아'] = '0'
 print(mdict,type(mdict))
 
 # 10. 8번에서 선언한 딕셔너리(dict)에서 Key 항목만 출력해보세요.
-print(mdict.keys())
+print(list(mdict.keys()))
 
 # 11. 8번에서 선언한 딕셔너리(dict)에서 value 항목만 출력해보세요.
-print(mdict.values())
+print(list(mdict.values()))
+
+#연습문제####
+#3,4
+pin = '881120-1068234'
+yyyymmdd = pin[:6]
+num = pin[7:]
+print(yyyymmdd,num,pin[7])
+
+#5
+a='a:b:c:d'
+print(a.replace(':','#'))
+
+#6
+a=[1,3,5,4,2]
+a.sort()
+print(a)
+a.reverse()
+print(a)
+
+#7
+a = ['Life', 'is', 'too', 'short']
+result = ' '.join(a)
+print(result)
+
+#8
+a = (1, 2, 3)
+a =  a + (4,)
+print(a)
+
+#9
+a = dict()
+#a[[1]] = 'python'
+print(a)
+
+#10
+a = {'A':90, 'B':80, 'C': 70}
+result = a.pop('B')
+print(a,'\n', result)
+
+#11
+a = [1,1,1,2,2,3,3,3,4,4,5]
+aSet = set(a)
+b = list(aSet)
+print(b)
+
+#12
+a = b = [1, 2, 3]
+a[1] = 4
+print(b)
