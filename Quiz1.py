@@ -13,7 +13,7 @@ print('%.1f' % pi)
 
 # 4. 문자열 '720'를 정수형으로 변환하세요. 정수 100을 문자열 '100'으로 변환하세요.
 a = '720'
-int(a)
+print(int(a), type(int(a)))
 a = 100
 str(100)
 
@@ -27,7 +27,7 @@ print(a+b,a*b,a/b)
 a = input()
 b = input()
 print(int(a)+int(b),int(a)*int(b))
-
+print(int(a)+int(b),int(a)*int(b))
 
 # 7. 'niceman', 'google.com' 문자열을 연속해서 출력할때 구분자를 @으로 변경하여 출력하세요.
 a = 'niceman'
@@ -53,5 +53,5 @@ str = 'Niceboy'
 l = list(str)
 l.reverse()
 print(str[:3],str[:],str[:-1],str[:],str[1:2]+str[3:4],str[4:6],str[1:5],''.join(l),str[::2],sep="\n")
-
+print(''.join(l),str[::-1],sep="\n")
 
