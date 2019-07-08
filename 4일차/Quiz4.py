@@ -62,6 +62,8 @@ print(calc2(3))
 # 이 함수를 사용하여 result 변수에 결과를 할당하고 print 해본다.
 
 def chk(str):
+    '''색깔 문자열을 입력하면
+    대응하는 과일 이름을 출력하는 함수'''
     if str == 'red' :
         return 'apple'
     elif str == 'yellow' :
@@ -72,3 +74,4 @@ def chk(str):
         return 'I don’t know'
 result = chk('yellow')
 print(result)
+help(chk)
