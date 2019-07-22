@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML5에 추가된 폼요소</title>
+</head>
+
+<body>
+    <h1>HTML5에 추가된 폼요소</h1>
+    <form action="http://daum.net">
+        <!-- fieldset>legend{날짜와시간 폼요소} -->
+        <fieldset>
+            <legend>날짜와시간 폼요소</legend>
+            <!-- 날짜선택 폼요소 date -->
+            <!-- p>label{생일}+input#userBirth[type=date] -->
+            <p>
+                <label for="userBirth">생일</label>
+                <input type="date" id="userBirth">
+            </p>
+            <!-- 시간 선택 요소 -->
+            <!-- p>label{상담시간}+input#userTime[type=time] -->
+            <p>
+                <label for="userTime">상담시간</label>
+                <input type="time" id="userTime">
+            </p>
+        </fieldset>
+        <!-- 색상 선택 요소 -->
+        <!-- fieldset>legend{좋아하는 색상}+input[type=color] -->
+        <fieldset>
+            <legend>좋아하는 색상</legend>
+            <!-- #000000 ~ #ffffff -->
+            <input type="color" value="#000000">
+        </fieldset>
+        <!-- 범위를 지정해서 숫자 선택  -->
+        <!-- 위아래방향키로 테스트  -->
+        <fieldset>
+            <legend>숫자 선택</legend>
+            <input type="number" min='1' max="10" value="1">
+        </fieldset>
+        <!-- 검색어  -->
+        <!-- fieldset>legend{검색창}+label{검색어입력}
+            +input#serchBox[type=serch]+button{검색} -->
+        <fieldset>
+            <legend>검색창</legend>
+            <label for="serchBox">검색어입력</label>
+            <input type="serch" id="serchBox">
+            <button>검색</button>
+        </fieldset>
+        <!-- 이메일주소 유효성 검사 : 입력란에 @ 확인 -->
+        <fieldset>
+            <legend>이메일주소 확인하기</legend>
+            <label for="userEmail">Email : </label>
+            <input type="email" id="userEmail">
+            <button>전송</button>
+        </fieldset>
+        <!-- 웹사이트 주소 유효성 검사  -->
+        <fieldset>
+            <legend>홈페이지 주소 확인하기</legend>
+            <label for="userUrl">Homepage URL : </label>
+            <input type="url" id="userUrl">
+            <button>전송</button>
+        </fieldset>
+        <!-- 참조 사이트  -->
+        <!-- https://www.w3schools.com/html/html5_new_elements.asp -->
+
+
+    </form>
+
+
+
+
+</body>
+
+</html>

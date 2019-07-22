@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FormTag</title>
+</head>
+<body>
+    <form method="get" action='#'>
+        <fieldset>
+        <legend><회원정보></회원정보></legend>
+            <p>
+                <label for="userId">회원 아이디 : </label>
+                <input type="text" id="userId" value="user id">
+            </p>
+            <p>
+                <label for="userPWD">비밀번호 : </label>
+                <input type="password" id="userPWD" placeholder="user pwd" maxlength="6">
+            </p>
+            <p>
+                <label for="readonly">readonly : </label>
+                <input type="text" id="readonly" value="readonly" readonly>
+            </p>
+            <!-- p>label{여자}+input#gender[type=radio name=gender] -->
+            <p>
+                <label for="genderF">여자</label>
+                <input type="radio" id="genderF" name="gender">
+
+                <label for="genderM">남자</label>
+                <input type="radio" id="genderM" name="gender">
+            </p>
+
+            <p>
+                <label for="init">신입</label>
+                <input type="radio" id="init" name="carieer" checked>
+
+                <label for="many">경력</label>
+                <input type="radio" id="many" name="carieer">
+            </p>
+            <p>
+                <!-- (label+input#hobby$[type=checkbox])*4-->
+                <label for="hobby1">등산</label>
+                <input type="checkbox" id="hobby1" checked>
+                <label for="hobby2">영화 감상</label>
+                <input type="checkbox" id="hobby2">
+                <label for="hobby3">피아노 연주</label>
+                <input type="checkbox" id="hobby3">
+                <label for="hobby4">수영</label>
+                <input type="checkbox" id="hobby4">
+            </p>
+            <p>
+                <input type="file" name="myfile" size="30">
+            </p>
+            <p>
+                <input type="submit" value="로그인">
+            </p>
+            <button>전송하기</button>
+            <p>
+            <textarea name="textarea" rows="5"  cols="30">여러줄 글상자</textarea>
+            </p>
+
+            <p>
+                <select name="job" id="seljob">
+                    <option>----선택하셈----</option>
+                    <option value="1">공무원</option>
+                    <option value="2">자영업</option>
+                    <option value="3">회사원</option>
+                    <option value="4">학생</option>
+                    <option value="5">기타</option>
+                </select>
+            </p>
+
+        </fieldset>
+        <p>
+            <label> 생일 : <input type="date"> </label>
+            <label> 예약일(날짜 시간) : <input type="datetime-local"> </label>
+            <label> 상담시간 : <input type="time"> </label>
+        </p>
+    </form>
+    <!-- label+input#userID[type=text] #은 아이디-->
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>html 배우기</title>
+</head>
+
+<body>
+    <h1>html 배우기</h1>
+    <h2>제목2</h2>
+    <h3>제목3</h3>
+
+    <!-- h4{제목4}+h5{제목5}+h6{제목6}
+주석 단축키 : ctrl+/
+-->
+    <h4>제목4</h4>
+    <h5>제목5</h5>
+    <h6>제목6</h6>
+
+    <!-- ctrl+/ 주석단축키 -->
+    <!-- br은 단순줄바꿈 -->
+    <p>행1입니다. <br />
+        행2입니다. <br><br>
+        행3입니다.
+    </p>
+    <!-- 
+    p{행$입니다.}*3
+    $는 자동숫자증감 
+    *숫자 : 반복 
+ -->
+    <p>행1입니다.</p>
+    <p>행2입니다.</p>
+    <p>행3입니다.</p>
+
+    <!-- 주소내용 입력하기  -->
+    <address>
+        주소 : (06220) 서울특별시 강남구 테헤란로 212, <br>
+        역삼동 718-5번지 멀티캠퍼스
+    </address>
+    <!-- blockquote 들여쓰기  -->
+    <blockquote>
+        Yes는 사랑과 자유에 대한 긍정적인 태도를 의미하는 것이다.
+        오늘부터라도 당신의 방문 앞에 Yes라는 푯말 하나를 걸어두고
+    </blockquote>
+    <!-- blockquote>blockquote 
+        들여쓰기 2번한 효과 
+    -->
+    <blockquote>
+        <blockquote>
+            하루에 한번씩이라도 <br>
+            Yes와 만나보는 것은 어떨까.<br>
+            당신도 모르는 사이 당신은 긍정적인 사람이 되어 <br>
+            당신의 삼십대를 당당하고 자신감있게 걸어가고 있지 않을까.
+        </blockquote>
+    </blockquote>
+
+    <!-- 글자와 관련된 태그 요소 
+    b, strong : 진하게 
+    em, i : 기울임 
+    code : 코딩스타일 
+    sup : 윗첨자 
+    sub : 아채첨자     
+    -->
+
+    <p>
+        <b>1.인생이란</b> 원래 공평하지 못하다.
+        <em>.....그런 현실에 대하여 불평할 생각하지 말고 받아들여라..</em>
+        <br><br>
+        <strong>Rule 1:</strong>
+        <i>Life is not fair.</i> Get used to it.
+    </p>
+    <p>
+        2. <sup>세상은</sup> 네 자신이 어떻게 생각하든 상관하지 않는다.
+        <sub>....세상이 너희들한테</sub> 기대하는 것은
+        네가 스스로 만족하다고
+        느끼기 전에 무엇인가를 성취해서 보여줄 것을 기다리고 있다.
+    </p>
+    <p><code>html이란?</code>
+        웹페이지를 제작하는 언어이다.
+    </p>
+    <!-- 수평선 긋기  -->
+    <hr>
+    <!-- 
+        하이퍼링크 태그 
+        <a href="URL" target="_blank" title="보충설명">글내용</a>
+     -->
+    <p>
+        <a href="http://google.com">구글 사이트로 이동하기1</a>
+    </p>
+    <p>
+        <a href="http://google.com" target="_blank" 
+            title="클릭시 구글로 이동됩니다.">
+            구글 사이트로 이동하기2
+        </a>
+    </p>
+    <!-- 로컬상의 html 문서와 연결 -->
+    <!-- p>a[href=test.html]{test.html 문서로 이동} -->
+    <p>
+        <a href="day1_2.html">test.html 문서로 이동</a>
+    </p>
+    <hr>
+    <!-- 순서없는 목록문단 -->
+    <ul>
+        <li>바나나</li>
+        <li>사과</li>
+        <li>포도</li>        
+    </ul>
+    <!-- ul>li*3 -->
+    <ul>
+        <li>티코</li>
+        <li>벤틀리</li>
+        <li>스타렉스</li>
+    </ul>
+    <!-- 순서있는 목록문단 ol>li -->
+    <!-- ol>li*4 -->
+    <ol>
+        <li>알라딘</li>
+        <li>기생충</li>
+        <li>엔드 게임</li>
+        <li>토토로</li>
+    </ol>
+    <!-- 목록안에 목록이 있는 경우  -->
+    <!-- ol>li*3 -->
+    <ol>
+        <li>웹디자인
+            <!-- ul>li*4 -->
+            <ul>
+                <li>포토샵</li>
+                <li>일러스트레이터</li>
+                <li>HTML</li>
+                <li>CSS</li>
+            </ul>
+        </li>
+        <li>프로그래밍
+            <!-- ol>li*3 -->
+            <ol>
+                <li>JAVA</li>
+                <li>C</li>
+                <li>Python</li>
+            </ol>
+        </li>
+        <li>전산회계</li>
+    </ol>
+    <hr>
+    <!-- 정의목록문단 -->
+    <!-- 제목+데이타 -->
+    <dl>
+        <dt>웹표준을 이루는 구성요소</dt>
+        <dd>html, css, javascript</dd>
+    </dl>
+    <!-- 제목+데이타3 -->
+    <!-- dl>dt+dd*3 -->
+    <dl>
+        <dt>RGB 칼라모드</dt>
+        <dd>Red</dd>
+        <dd>Green</dd>
+        <dd>Blue</dd>
+    </dl>
+    <!-- 제목1+데이타2+제목2+데이타3 -->
+    <!-- dl>(dt+dd*2)+(dt+dd*3) -->
+    <dl>
+        <dt>여자 아이돌 그룹</dt>
+        <dd>트와이스</dd>
+        <dd>레드벨벳</dd>
+        <dt>남자 아이돌 그룹</dt>
+        <dd>방탄소년단</dd>
+        <dd>워너원</dd>
+        <dd>뉴이스트</dd>
+    </dl>
+    <!-- 하이퍼링크 목록 생성하기 -->
+    <!-- h2{방송국목록}+ul>(li>a)*3 -->
+    <h2>방송국목록</h2>
+    <ul>
+        <li><a href="http://imbc.com" target="_blank">MBC</a></li>
+        <li><a href="" target="_blank">KBS</a></li>
+        <li><a href="" target="_blank">JTBC</a></li>
+    </ul>
+
+
+
+</body>
+
+</html>

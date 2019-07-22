@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table테스트</title>
+</head>
+<body>
+    <!--table>(tr>td*4)*4-->
+    <!--table[border="1" width="500" height="400"]>(tr>td*4)*4-->
+    <table border="1" width="500" height="400">
+        <tr>
+            <td></td>
+            <td></td>
+            <td colspan="2"></td>
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+            <td></td>
+            <td rowspan="3"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td rowspan="2"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <table cellpadding="40" cellspacing="0" bordercolor="blue" border="1" width="500" height="400">
+        <caption> 데이터 분석 결과</caption>
+        <thead>
+            <tr>
+                <th bgcolor=#FF0000 align="left">제목</th>
+                <th bgcolor=#FF0000 align="left">글쓴이</th>
+                <th bgcolor=#FF0000 align="left">일자</th>
+                <th bgcolor=#FF0000 align="left">제목</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="4" bgcolor="yellow"></td>
+                <td bgcolor="black"></td>
+                <td colspan="2" bgcolor="skyblue"></td>
+            </tr>
+            <tr>
+                <td colspan="2" bgcolor="green"></td>
+                <td bgcolor=#Fdc5as></td>
+            </tr>
+            <tr>
+                <td rowspan="2" bgcolor="pink"></td>
+                <td colspan="2" bgcolor="gray"></td>
+            </tr>
+            <tr>
+                <td bgcolor=#ABCDEF></td>
+                <td bgcolor=#184125></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

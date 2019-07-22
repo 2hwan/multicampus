@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>폼</title>
+</head>
+
+<body>
+    <h1>폼관련 태그 배우기</h1>
+    <hr>
+    <h2>폼1</h2>
+    <form action="http://google.com">
+        <!-- 라벨태그랑 텍스트필드가 같은 레벨인 경우 
+         label[for=userId]+input#userId
+        -->
+        <!-- label+input#userId[type=text] -->
+        <p>
+            <label for="userId">회원 아이디 : </label>
+            <input type="text" id="userId" value="user id">
+        </p>
+        <!-- 라벨태그안에 텍스트필드가 있는 경우 : id 불필요 -->
+        <!-- p>label>input[type=text] -->
+        <p>
+            <label>이메일 주소 :
+                <input type="text">
+            </label>
+        </p>
+        <!-- 암호 텍스트 필드  -->
+        <!-- p>label{비밀번호}+input#userPwd[type=password] -->
+        <p>
+            <label for="userPwd">비밀번호</label>
+            <input type="password" id="userPwd">
+        </p>
+        <!-- 여러줄 글상자 -->
+        <!-- p>label{메세지:}+textarea#userMsg[cols=80 rows=5] -->
+        <p>
+            <label for="userMsg">메세지:</label> <br>
+            <textarea name="" id="userMsg" cols="80" rows="5">
+                메세지를 입력해주세요
+            </textarea>
+        </p>
+        <!-- 필드셋을 이용한 그룹화 -->
+        <!-- fieldset>legend{성별} -->
+        <fieldset>
+            <legend>성별</legend>
+            <!-- 라디오버튼 그룹 -->
+            <!-- p>label{여자}+input#gender1[type=radio name=gender] -->
+            <p>
+                <label for="gender1">여자</label>
+                <input type="radio" id="gender1" name="gender">
+            </p>
+            <p>
+                <label for="gender2">남자</label>
+                <input type="radio" id="gender2" name="gender" checked>
+            </p>
+        </fieldset>
+        <!-- 체크박스 : 그룹내에서 다중선택 가능  -->
+        <!-- fieldset>legend{취미}+(label+input#hobby$[type=checkbox])*4 -->
+        <fieldset>
+            <legend>취미</legend>
+            <label for="hobby1">등산</label>
+            <input type="checkbox" id="hobby1" checked name='hobby'>
+            <label for="hobby2">영화 감상</label>
+            <input type="checkbox" id="hobby2" name='hobby'>
+            <label for="hobby3">피아노 연주</label>
+            <input type="checkbox" id="hobby3" name='hobby'>
+            <label for="hobby4">수영</label>
+            <input type="checkbox" id="hobby4" name='hobby'>
+        </fieldset>
+        <!-- 옵션박스 -->
+        <!-- fieldset>legend{직업}+select>option*6 -->
+        <fieldset>
+            <legend>직업</legend>
+            <select name="" id="">
+                <option>---- 선택하세요 ----</option>
+                <option value="">공무원</option>
+                <option value="">자영업</option>
+                <option value="">회사원</option>
+                <option value="">학생</option>
+                <option value="">기타</option>
+            </select>
+        </fieldset>
+        <!-- fieldset>legend{첨부파일}+input[type=file] -->
+        <fieldset>
+            <legend>첨부파일</legend>
+            <input type="file">
+        </fieldset>
+        <!-- 버튼 -->
+        <!-- p>input[type]*2 -->
+        <p>
+            <input type="reset" value="취소하기">
+            <input type="submit" value="전송하기1">
+            <button>전송하기2</button>
+        </p>
+
+    </form>
+
+    <hr>
+    <h2>퀴즈 - 수강신청서 </h2>
+    <form action="">
+        
+    </form>
+
+
+</body>
+
+</html>

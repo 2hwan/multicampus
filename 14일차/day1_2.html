@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 태그 배우기2 - 테이블, 이미지</title>
+</head>
+
+<body>
+    <h1>HTML 태그 배우기2 - 테이블, 이미지</h1>
+    <hr>
+    <h2>테이블 3행3열 </h2>
+    <table border="1" cellpadding="10" cellspacing="0" width="500">
+        <!-- 1행 -->
+        <tr>
+            <th>제목1</th>
+            <th>제목2</th>
+            <th>제목3</th>
+        </tr>
+        <!-- 2행 -->
+        <tr>
+            <td>데이타1</td>
+            <td>데이타2</td>
+            <td>데이타3</td>
+        </tr>
+        <!-- 3행 -->
+        <tr>
+            <td>데이타1</td>
+            <td>데이타2</td>
+            <td>데이타3</td>
+        </tr>
+    </table>
+    <hr>
+    <h2>4행3열 테이블 </h2>
+    <!-- table>(tr>td{데이타$}*3)*4 -->
+    <table border="2" cellpadding="10" cellspacing="5" 
+        bordercolor="red">
+        <!-- 1행  -->
+        <tr>
+            <!-- 가로셀 합치기 -->
+            <td colspan="2" bgcolor="brown">데이타1</td>
+            <!-- <td>데이타2</td> -->
+            <!-- 4열 모두 합치기 -->
+            <td rowspan="4" bgcolor="beige">데이타3</td>
+        </tr>
+        <!-- 2행 -->
+        <tr>
+            <td>데이타1</td>
+            <td>데이타2</td>
+            <!-- <td>데이타3</td> -->
+        </tr>
+        <!-- 3행 -->
+        <tr>
+            <td>데이타1</td>
+            <td>데이타2</td>
+            <!-- <td>데이타3</td> -->
+        </tr>
+        <!-- 4행 -->
+        <tr>
+            <td>데이타1</td>
+            <td>데이타2</td>
+            <!-- <td>데이타3</td> -->
+        </tr>
+    </table>
+
+    <hr>
+    <h2>테이블 퀴즈1</h2>
+    <!-- &nbsp; 한칸공백 -->
+    <!-- table>(tr>td{&nbsp;}*4)*4 -->
+    <table border="1" width='400' 
+            cellspacing='0'>
+        <tr>
+            <td rowspan="4">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td colspan="2">&nbsp;</td>
+            <!-- <td>&nbsp;</td> -->
+        </tr>
+        <tr>
+            <!-- <td>&nbsp;</td> -->
+            <td colspan="2">&nbsp;</td>
+            <!-- <td>&nbsp;</td> -->
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <!-- <td>&nbsp;</td> -->
+            <td rowspan="2">&nbsp;</td>
+            <td colspan="2">&nbsp;</td>
+            <!-- <td>&nbsp;</td> -->
+        </tr>
+        <tr>
+            <!-- <td>&nbsp;</td> -->
+            <!-- <td>&nbsp;</td> -->
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>  
+
+
+
+    <hr>
+    <h2>이미지</h2>
+    <!-- 목록문단안에 이미지가 있는 경우  -->
+    <ul>
+        <li>그림1 <img src="smile/cry.png" alt="cry"></li>
+        <li>그림2 <img src="smile/eyes_droped.png" alt="eyes_droped"></li>
+    </ul>
+    <!-- 이미지 하이퍼링크  -->
+    <!-- dl>dt{카카오}+dd -->
+    <dl>
+        <dt>카카오</dt>
+        <dd>
+            <!-- a>img -->
+            <a href="http://www.kakaocorp.com" 
+                title='카카오 회사페이지로 이동'
+                target="_blank">
+                <img src="smile/go.png" alt="go">
+            </a>
+        </dd>
+    </dl>
+    <hr>
+    <!-- 테이블 셀 안에 이미지가 있는 경우 -->
+    <!-- table>(tr>(td>img)*2)*2 -->
+    <table border='1' cellpadding='10' bordercolor='black'>
+        <tr>
+            <td><img src="smile/happy.png" alt="happy"></td>
+            <td><img src="smile/happy.png" alt="happy"></td>
+        </tr>
+        <tr>
+            <td><img src="smile/horror.png" alt="horror"></td>
+            <td><img src="smile/money.png" alt="money"></td>
+        </tr>
+    </table>
+    <hr>
+    <!-- 웹상의 이미지 삽입하기 -->
+    <!-- ul>(li>a>img)*3 -->
+    <ul>
+        <!-- 구글로고 이미지  -->
+        <!-- http://google.com 구글로고이미지 우측버튼 
+           이미지주소복사 -->
+        <li>
+            <a href="http://google.com" target="_blank">
+                <img src="https://www.google.co.kr/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="구글로고">
+            </a>
+        </li>
+        <!-- 다음 로고 이미지  -->
+        <li><a href="http://daum.net" target="_blank">
+            <img src="https://t1.daumcdn.net/daumtop_chanel/op/20170315064553027.png" alt="다음 로고">
+        </a></li>
+        <!-- CGV 로고 이미지  -->
+        <li><a href="http://www.cgv.co.kr/movies" target="_blank">
+            <img src="http://img.cgv.co.kr/R2014/images/title/h1_cgv.png" alt="CGV로고">
+        </a></li>
+    </ul>
+
+
+
+
+
+
+
+
+</body>
+
+</html>
