@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>선택자2</title>
+  <!-- css -->
+  <style>
+    /* 클래스 선택자 */
+    /* 특정 글자에 적용할 클래스 디자인  */
+    .letterFirst {
+      background: black;
+      color: white;
+      font-size: 2em;
+      padding: 5px
+    }
+
+    /* 아이디 선택자 */
+    /* 목록문단에 적용할 아이디 디자인 */
+    #ulStyle {
+      line-height: 150%;
+      text-decoration: underline;
+      list-style-type: square;
+      width: 400px;
+      border: 1px solid crimson;
+    }
+
+    /* 그룹 선택자  */
+    /* h1, h2 태그 디자인 */
+    h1,
+    h2 {
+      text-align: center;
+      color: darkred;
+      letter-spacing: 10px
+    }
+
+    /* 자손 선택자  */
+    #ul1 li {
+      color: red;
+    }
+
+    .ul2 li {
+      color: blue;
+    }
+
+    #ul1 span {
+      font-size: 2em
+    }
+
+    /* 자식 선택자  */
+    .ul2>span {
+      font-size: 2em;
+      background: yellow
+    }
+
+    .ul2>li>span {
+      font-size: 2em;
+      background: yellowgreen
+    }
+
+    /* 테이블 디자인1  */
+    #table1 {
+      border-collapse: collapse;
+      border: 2px solid darkgreen;
+      width: 500px;
+      margin: 20px auto;
+    }
+
+    #table1 caption {
+      padding: 10px
+    }
+
+    #table1 tr {
+      border-bottom: 1px solid gray
+    }
+
+    #table1 tr td {
+      padding: 5px;
+      text-align: center
+    }
+
+    #table1 tr td.cellStyle1 {
+      background: darkcyan;
+      color: white;
+      font-weight: bold
+    }
+
+    #table1 tr td.cellStyle2 {
+      background:lightblue;
+      font-weight: bold;
+      border-right:1px solid gray
+    }
+
+
+    /* 테이블2 퀴즈 디자인  */
+    #table2 {
+      border-collapse: collapse;
+      border-top:2px solid darkgreen;
+      width: 700px;
+      margin: 20px auto;
+    }
+
+    #table2 caption {
+      padding: 10px
+    }
+
+    #table2 td {
+      border-right: 1px solid darkgreen;
+      border-bottom: 1px solid darkgreen;
+      text-align:center;
+      padding:5px
+    }
+
+    /* 마지막 컬럼에 적용할 디자인  */
+    #table2 td.rightStyle {
+      border-right: none;
+    }
+
+    /* 배경 색상이 적용된 셀 디자인 */
+    #table2 td.bgStyle {
+      background: lightgrey;
+      font-weight:bold;
+    }
+
+
+  </style>
+</head>
+
+<body>
+  <!-- 
+h1{선택자2}+hr+h2{문단}+p*3+hr+h2{목록문단}
+(ul>li{목록}*3)*3 
+-->
+  <h1>선택자2</h1>
+  <hr>
+  <h2 class="letterFirst">문단</h2>
+  <p> <span class="letterFirst">물병자리</span>에서 태어난 사람음 항상
+    집단 가운데 있으며 대중과 함께 생각하고
+    행동하는 것을 바랍니다.
+    <span class="letterFirst">물병자리</span> 사람의 의지를 결정하는 것은
+    그 주위에 몰려 있는 사람들이죠.</p>
+  <p>이 때 태어난 사람은 정신적으로든
+    물질적으로든 철저한 타입입니다
+    그렇게 함으로써 충분히
+    자기 자신도 만족할 수 있죠. </p>
+  <p>온후한 성격과 성실한 인간관계로
+    위험한 모험보다는 안전한 길을 택해
+    신중한 인생을 살아가 려는 것이
+    황소자리에 속한 사람들의 특징이다. </p>
+  <hr>
+  <h2>목록문단</h2>
+  <ul>
+    <li>목록</li>
+    <li>목록</li>
+    <li>목록</li>
+  </ul>
+  <ul id="ulStyle">
+    <li>목록</li>
+    <li>목록</li>
+    <li>목록</li>
+  </ul>
+
+  <ul id='ul1'>
+    <li>목록</li>
+    <li>목록</li>
+    <li> <span>목</span>록</li>
+  </ul>
+
+  <ul class='ul2'>
+    <li>목록</li>
+    <li><span>목</span>록</li>
+    <li><span>목</span>록</li>
+  </ul>
+
+  <!-- table 48 슬라이드 : 5행 7열 -->
+  <!-- table>caption{표제목}+(tr>td{데이타$}*7)*5 -->
+  <table id='table1'>
+    <caption>표제목</caption>
+    <tr>
+      <td colspan="2">데이타1</td>
+      <!-- <td>데이타2</td> -->
+      <td>데이타3</td>
+      <td>데이타4</td>
+      <td>데이타5</td>
+      <td>데이타6</td>
+      <td>데이타7</td>
+    </tr>
+    <tr>
+      <td rowspan="4" class='cellStyle1'>데이타1</td>
+      <td class="cellStyle2">데이타2</td>
+      <td>데이타3</td>
+      <td>데이타4</td>
+      <td>데이타5</td>
+      <td>데이타6</td>
+      <td>데이타7</td>
+    </tr>
+    <tr>
+      <!-- <td>데이타1</td> -->
+      <td class="cellStyle2">데이타2</td>
+      <td>데이타3</td>
+      <td>데이타4</td>
+      <td>데이타5</td>
+      <td>데이타6</td>
+      <td>데이타7</td>
+    </tr>
+    <tr>
+      <!-- <td>데이타1</td> -->
+      <td class="cellStyle2">데이타2</td>
+      <td>데이타3</td>
+      <td>데이타4</td>
+      <td>데이타5</td>
+      <td>데이타6</td>
+      <td>데이타7</td>
+    </tr>
+    <tr>
+      <!-- <td>데이타1</td> -->
+      <td class="cellStyle2">데이타2</td>
+      <td>데이타3</td>
+      <td>데이타4</td>
+      <td>데이타5</td>
+      <td>데이타6</td>
+      <td>데이타7</td>
+    </tr>
+  </table>
+<!-- 퀴즈 - 슬라이드 49번 테이블 디자인 -->
+<!-- table#table2>caption{쇼핑몰자격증}+(tr>td{데이타$}*5)*5 -->
+<table id="table2">
+  <caption>쇼핑몰자격증</caption>
+  <tr>
+    <td class="bgStyle">데이타1</td>
+    <td class="bgStyle">데이타2</td>
+    <td colspan="2" class="bgStyle">응시료 안내</td>
+    <!-- <td>데이타4</td> -->
+    <td class="rightStyle bgStyle">데이타5</td>
+  </tr>
+  <tr>
+    <td rowspan="2" class="bgStyle">1급</td>
+    <td rowspan="2">데이타데이타</td>
+    <td>필기</td>
+    <td>15000원</td>
+    <td rowspan="4" class="rightStyle">시험일</td>
+  </tr>
+  <tr>
+    <!-- <td>데이타1</td> -->
+    <!-- <td>데이타2</td> -->
+    <td>실기</td>
+    <td>25000원</td>
+    <!-- <td>데이타5</td> -->
+  </tr>
+  <tr>
+    <!-- <td>데이타1</td> -->
+    <!-- <td>데이타2</td> -->
+    <td rowspan="2" class="bgStyle">2급</td>
+    <td rowspan="2">데이타데이타</td>
+    <td>필기</td>
+    <td>15000원</td>
+    <!-- <td>데이타5</td> -->
+  </tr>
+  <tr>
+    <!-- <td>데이타1</td> -->
+    <!-- <td>데이타2</td> -->
+    <td>실기</td>
+    <td>25000원</td>
+    <!-- <td>데이타5</td> -->
+  </tr>
+</table>
+
+
+
+
+</body>
+
+</html>

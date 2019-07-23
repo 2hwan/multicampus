@@ -1,0 +1,36 @@
+h1 {
+  text-align: center;
+  text-decoration: underline
+}
+
+/* h2 디자인 - 우측정렬, 배경색상 */
+h2 {
+  text-align: right;
+  background-color: gold
+}
+
+/* p 디자인 - 하단 점선 테두리, 여백, 글자크기 변경  */
+p {
+  border-bottom:dashed 1px darkcyan;
+  padding:20px;
+  font-size:2em;
+}
+
+/* ul 디자인 - 마커 이미지, 목록마다 점선 생성  */
+ul { list-style-image: url('images_icon/ico_arrow07.gif');
+  line-height:180% }
+li {
+  border-bottom:dashed 1px darkred;
+ }
+
+/*  table 디자인 */
+table { width:300px;
+        margin:20px auto;
+        /* 셀과 셀 사이이 여백없어짐. 테두리병합 */
+        border-collapse:collapse;
+        border-top:5px solid red }
+
+td { border:1px solid black;
+     padding:5px;
+     text-align:center;
+     background:darkgrey }
