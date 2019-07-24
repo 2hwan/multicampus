@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="container">
+{% if session['logged_in'] %}
+
+{% if data %}
+<h3>팔로워 : {{ '{:,}'.format(cnt) }} </h3>
+<table border="0" cellpadding="10" cellspacing="10">
+    <tr>
+    {% for thumb in data %}
+        <td><img src={{thumb}} width="150" height="150"></td>
+        {% if (loop.index > 1) and (loop.index % 5 == 0) and (loop.index == loop.length) %}
+        </tr>
+        {% elif loop.index > 1 and loop.index % 5 == 0 %}
+        </tr><tr>
+        {% endif %}
+    {% endfor %}
+</table>
+{% endif %}
+
+<br><br>
+<form action="" method="POST">
+    <input type="username" name="username" placeholder="Instagram Username">
+    <input type="submit" value="Finds">
+</form>
+
+<p>
+박신혜 : ssinz7 <br>
+공 유 : gongyoo1079<br>
+박서준 : bn_sj2013<br>
+이효리 : lee_hyori_onni<br>
+정해인 : holyhaein<br>
+</p>
+
+{% else %}
+<p><h4>로그인을 하시면 스타들의 인스타그램을 이용하실 수 있습니다.</h4></p>
+{% endif %}
+</div>
+{% endblock %}

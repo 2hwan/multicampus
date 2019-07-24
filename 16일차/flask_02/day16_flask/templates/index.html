@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>index.html</h1>
+    <h3>a1 : data_dic.a1  중가로 두개 안함</h3>
+    <h3>a1 : {{data_dic.a1}}  중가로 두개함</h3>
+    <h3>a2 : {{data_dic.a2}}</h3>
+
+    {% for value in data_list %}
+    <h3>{{loop.index}} . {{value}}</h3>
+    {% endfor %}
+
+    {% for value in data_list %}
+    <h3>{{loop.index0}} . {{value}}</h3> <!--인덱스 시작점 바꾸기-->
+    {% endfor %}
+
+    {% if data_dic.a1 == 100 %}
+    <h3>data_dic.a1은 100입니다</h3>
+    {% else %}
+    <h3>data_dic.a1은 100이 아닙니다</h3>
+    {% endif %}
+    <hr>
+
+    <ul>
+        {% for key, value in data_dic.items() %}
+            <li> key : {{key}}, value : {{value}} </li>
+        {% endfor %}
+    </ul>
+
+
+</body>
+</html>
+

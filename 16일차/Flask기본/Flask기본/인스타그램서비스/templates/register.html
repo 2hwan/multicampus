@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container">
+{% if session['logged_in'] %}
+  <p><h3>이미 등록된 사용자입니다.</h3></p>
+{% else %}
+  <h2>Register</h2>
+  <form action="/register/" method="POST">
+    <input type="username" name="username" placeholder="Username">
+    <input type="password" name="password" placeholder="Password">
+    <input type="submit" value="Log in">
+  </form>
+{% endif %}
+</div>
+{% endblock %}
