@@ -1,0 +1,169 @@
+from flask import Flask, render_template, request, session
+import database as db
+
+app = Flask(__name__, template_folder='view')
+app.secret_key='GDFGDFGDFGD'
+
+@app.route('/')
+def index() :
+    html = render_template('index.html')
+    return html
+
+@app.route('/about')
+def about() :
+    return 'about page'
+
+@app.route('/student_list')
+def student_list() :
+    stu_name = request.args.get('stu_name')
+    stu_list = db.get_student_list(stu_name)
+
+    html = render_template('student_list.html', data_list=stu_list)
+    return html
+
+@app.route('/show_point')
+def show_point() :
+    html = render_template('show_point.html')
+    return html
+
+@app.route('/student_info', methods=['get', 'post'])
+def student_info() :
+    # 파라미터 데이터 추출
+    stu_idx = request.args.get('stu_idx')
+    # 학생 데이터를 가져온다.
+    result_dic = db.get_student_info(stu_idx)
+    # 학생 점수를 가져온다.
+    result_list = db.get_point(stu_idx)
+
+    html = render_template('student_info.html', data_dic=result_dic, data_list=result_list)
+    return html
+
+@app.route('/add_student')
+def add_student() :
+    html = render_template('add_student.html')
+    return html
+
+@app.route('/add_point')
+def add_point() :
+    # 파라미터 데이터 추출
+    stu_idx = request.args.get('stu_idx')
+    temp_dic = {}
+    temp_dic['stu_idx'] = stu_idx
+
+    html = render_template('add_point.html', data_dic=temp_dic)
+    return html
+
+@app.route('/add_student_pro', methods=['post'])
+def add_student_pro() :
+    # 파라미터 데이터 추출한다.
+    stu_name = request.form['stu_name']
+    stu_age = request.form['stu_age']
+    stu_addr = request.form['stu_addr']
+
+    # print(f'{stu_name} {stu_age} {stu_addr}')
+    # 저장한다.
+    idx = db.add_student(stu_name, stu_age, stu_addr)
+
+    result_dic = { 'stu_idx' : idx,
+                   'msg' : '학생등록이 완료되었습니다'}
+
+    html = render_template('add_student_pro.html', data_dic=result_dic)
+    return html
+
+@app.route('/add_point_pro', methods=['post'])
+def add_point_pro() :
+    # 파라미터 추출
+    point_stu_grade = request.form['point_stu_grade']
+    point_stu_kor = request.form['point_stu_kor']
+    point_stu_idx = request.form['point_stu_idx']
+    # 점수 정보 저장
+    db.add_point(point_stu_idx, point_stu_grade, point_stu_kor)
+
+    temp_dic = {}
+    temp_dic['stu_idx'] = point_stu_idx
+    html = render_template('add_point_pro.html', data_dic=temp_dic)
+    return html
+
+@app.route('/login', methods=['get','post'])
+def login() :
+
+    html = render_template('login.html')
+    return html
+
+@app.route('/login_pro', methods=['get','post'])
+def login_pro() :
+    id = request.form['id']
+    pwd = request.form['pwd']
+    session['m_session'] = db.login(id,pwd)
+
+    html = render_template('login_pro.html')
+    return html
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    html = render_template('register.html')
+    return html
+
+@app.route('/register_pro', methods=['GET', 'POST'])
+def register_pro():
+    # 파라미터 추출
+    id = request.form['id']
+    pwd = request.form['pwd']
+    # 점수 정보 저장
+    db.register(id,pwd)
+
+    html = render_template('register_pro.html')
+    return html
+
+@app.route('/logout', methods=['get','post'])
+def logout() :
+
+    session['m_session'] = False
+
+    html = render_template('index.html')
+    return html
+
+@app.route('/modify_student', methods=['GET', 'POST'])
+def modify_student() :
+    stu_idx = request.args.get('stu_idx')
+    temp_dic = {}
+    temp_dic['stu_idx'] = stu_idx
+
+    html = render_template('modify_student.html',data_dic=temp_dic)
+    return html
+
+@app.route('/modify_student_pro', methods=['GET', 'POST'])
+def modify_student_pro() :
+
+    idx = request.form['stu_idx']
+    name = request.form['stu_name']
+    age = request.form['stu_age']
+    addr = request.form['stu_addr']
+    db.modify(idx, name, age,addr)
+
+    temp_dic = {}
+    temp_dic['stu_idx'] = idx
+
+    html = render_template('modify_student_pro.html',data_dic=temp_dic)
+    return html
+
+@app.route('/delete_student', methods=['GET', 'POST'])
+def delete_student() :
+    stu_idx = request.args.get('stu_idx')
+    temp_dic = {}
+    temp_dic['stu_idx'] = stu_idx
+
+    html = render_template('delete_student.html', data_dic=temp_dic)
+    return html
+
+@app.route('/delete_student_pro', methods=['GET', 'POST'])
+def delete_student_pro() :
+
+    idx = request.form['stu_idx']
+
+    db.delete_student(idx)
+
+    html = render_template('delete_student_pro.html')
+    return html
+
+app.run(host='127.0.0.1', port=8080)
