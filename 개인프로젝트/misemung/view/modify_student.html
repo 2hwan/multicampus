@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+<div class="container">
+    <h1>학생 정보 수정</h1>
+    <form action="modify_student_pro" method="post">
+        이름 : <input type="text" name="stu_name"/><br/>
+        나이 : <input type="text" name="stu_age"/><br/>
+        주소 : <input type="text" name="stu_addr"/><br/>
+        <input type="hidden" name="stu_idx" value="{{data_dic.stu_idx}}"/><br/>
+        <button type="submit">수정하기</button>
+    </form>
+    <p>
+        <a href="student_list">목록보기</a>
+    </p>
+</div>
+
+{% endblock %}

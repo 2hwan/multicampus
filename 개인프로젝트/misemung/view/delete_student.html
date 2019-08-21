@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+<div class="container">
+    <h1>삭제하시겠습니까?</h1>
+    <form action="delete_student_pro" method="post">
+        <input type="hidden" name="stu_idx" value="{{data_dic.stu_idx}}"/><br/>
+        <button type="submit">삭제하기</button>
+    </form>
+    <p>
+        <a href="student_list">아니오</a>
+    </p>
+</div>
+
+{% endblock %}
