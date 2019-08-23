@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+<script>
+    setTimeout(function(){
+    location.reload();
+    },600000);
+</script>
+
+<div class="container">
+    <p><center>
+        <a href="{{ url_for('index') }}" class="btn btn-success btn-lg" role="button">현재 미세먼지</a>
+        <a href="{{ url_for('hour') }}" class="btn btn-info btn-lg" role="button">한 시간 뒤 미세먼지</a>
+        <a href="{{ url_for('future') }}" class="btn btn-info btn-lg" role="button">미래 미세먼지</a>
+    </center>
+    </p>
+    <p><center>
+        <iframe src="/now" width="80%" height="500"></iframe>
+    </center>
+    </p>
+</div>
+
+{% endblock %}
